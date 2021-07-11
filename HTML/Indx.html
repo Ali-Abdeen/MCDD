@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/a1.css">
+</head>
+
+<body>
+    <table id="maintable">
+        <tr>
+            <td id="firstTD"><img src="/Assets/logo.png" alt="logo" class="logo"></td>
+            <td>
+                <div id="dashboards">Dashboards</div>
+                <div id="title">Overview</div>
+            </td>
+            <td colspan="2">                
+                <form action="">
+                    <label for="range"></label>
+                    <input type="date" id="range" name="range" class="date" value="2021-07-05">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="">
+                    <div class="buttonwrapper">
+                        <label for="search"></label>
+                        <input type="text" name="search" id="search" placeholder="Search..." class="searchBar">
+                        <button type="button"><img src="/Assets/search.png" alt="search" class="searchButton"></button>
+                    </div>
+                </form>
+            </td>
+            <td colspan="3">
+                <hr id="firstHR">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                <ul class="nav">
+                    <li id="dashboardsNav">DASHBOARDS</li>
+                    <li id="selected">Overview</li>
+                    <li>Order history</li>
+                    <li>Fluid layout</li>
+                    <li>Icon nav</li>
+                </ul>
+                <ul class="nav">
+                    <li id="more">MORE</li>
+                    <li>Toolkit docs</li>
+                    <li>Bootstrap docs</li>
+                    <li>Light UI</li>
+                    <li>Example modal</li>
+                </ul>
+                <hr id="navHR">
+            </td>
+            <td>
+                <div class="pie">
+                    <div id="pie1full"></div>
+                    <div id="pie1cut"></div>
+                    <div class="innerCircle"></div>
+                </div><br>
+                <div class="catagory">Patients</div>
+                <div class="comparisons">Inpatient vs Discharge</div>
+            </td>
+            <td>
+                <div class="pie">
+                    <div id="pie2full"></div>
+                    <div id="pie2cut"></div>
+                    <div class="innerCircle"></div>
+                </div><br>
+                <div class="catagory">Patients</div>
+                <div class="comparisons">Current vs Availible spots</div>
+            </td>
+            <td>
+                <div class="pie">
+                    <div id="pie3full"></div>
+                    <div id="pie3cut"></div>
+                    <div class="innerCircle"></div>
+                </div><br>
+                <div class="catagory">Traffic</div>
+                <div class="comparisons">Direct vs Referrals</div>
+            </td>
+        </tr>
+        <tr>
+            <td colspan="3" id="quickStats">
+                <div id="qsDIV">
+                    <span>
+                        <hr class="qsHR">
+                    </span>
+                    <span>QUICK STATS</span>
+                    <span>
+                        <hr class="qsHR">
+                    </span>
+                </div>
+
+                <div class="square" id="square1">
+                    <span class="squareTitle">Current Patients</span>
+                    <h2 class="squareDigit">811 <small class="squareSmall">
+                            5%
+                            <span class="arrow-up"></span>
+                        </small>
+                    </h2>
+                    <hr class="squareHR">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="186" height="74" stroke="#000" stroke-linecap="round"
+                        stroke-linejoin="round" fill="#fff" fill-rule="evenodd" stroke-width="4">
+                        <path
+                            d="M203.5 4.5v66H1.5v-9.850746l19.19-18.716418 15.15 10.835821 32.32-15.761194 47.47 9.850746 27.27-24.626866 18.18 16.746269L202.49 4.5"
+                            stroke="#60d9b0" fill="#60d9b0" />
+                        <path d="M1.5 60.5l19.19-19 15.15 11 32.32-16 47.47 10 27.27-25 17.17 16L203.5.5m-202 60l-6 6"
+                            fill="none" stroke="#fff" />
+                    </svg>
+
+                </div>
+                <div class="square" id="square2">
+                    <span class="squareTitle">Availible Staff</span>
+                    <h2 class="squareDigit">400 <small class="squareSmall">
+                            5%
+                            <span class="arrow-down"></span>
+                        </small>
+                    </h2>
+                    <hr class="squareHR">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="186" height="74" stroke="#000" stroke-linecap="round"
+                        stroke-linejoin="round" fill="#fff" fill-rule="evenodd" stroke-width="4">
+                        <path
+                            d="M203.5 4.5v66H1.5v-9.850746l19.19-18.716418 15.15 10.835821 32.32-15.761194 47.47 9.850746 27.27-24.626866 18.18 16.746269L202.49 4.5"
+                            stroke="#ee7f8b" fill="#ee7f8b" />
+                        <path d="M1.5 60.5l19.19-19 15.15 11 32.32-16 47.47 10 27.27-25 17.17 16L203.5.5m-202 60l-6 6"
+                            fill="none" stroke="#fff" />
+                    </svg>
+
+                </div>
+
+                <div class="square" id="square3">
+                    <span class="squareTitle">monthly patients</span>
+                    <h2 class="squareDigit">200 <small class="squareSmall">
+                            5%
+                            <span class="arrow-up"></span>
+                        </small>
+                    </h2>
+                    <hr class="squareHR">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="186" height="74" stroke="#000" stroke-linecap="round"
+                        stroke-linejoin="round" fill="#fff" fill-rule="evenodd" stroke-width="4">
+                        <path
+                            d="M203.5 4.5v66H1.5v-9.850746l19.19-18.716418 15.15 10.835821 32.32-15.761194 47.47 9.850746 27.27-24.626866 18.18 16.746269L202.49 4.5"
+                            stroke="#bcaaff" fill="#bcaaff" />
+                        <path d="M1.5 60.5l19.19-19 15.15 11 32.32-16 47.47 10 27.27-25 17.17 16L203.5.5m-202 60l-6 6"
+                            fill="none" stroke="#fff" />
+                    </svg>
+
+                </div>
+
+                <div class="square" id="square4">
+                    <span class="squareTitle">Monthly Discharges</span>
+                    <h2 class="squareDigit">150 <small class="squareSmall">
+                            5%
+                            <span class="arrow-down"></span>
+                        </small>
+                    </h2>
+                    <hr class="squareHR">
+
+                    <svg xmlns="http://www.w3.org/2000/svg" width="186" height="74" stroke="#000" stroke-linecap="round"
+                        stroke-linejoin="round" fill="#fff" fill-rule="evenodd" stroke-width="4">
+                        <path
+                            d="M203.5 4.5v66H1.5v-9.850746l19.19-18.716418 15.15 10.835821 32.32-15.761194 47.47 9.850746 27.27-24.626866 18.18 16.746269L202.49 4.5"
+                            stroke="#ece473" fill="#ece473" />
+                        <path d="M1.5 60.5l19.19-19 15.15 11 32.32-16 47.47 10 27.27-25 17.17 16L203.5.5m-202 60l-6 6"
+                            fill="none" stroke="#fff" />
+                    </svg>
+
+                </div>
+                <hr id="qsEndHR">
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <div class="row">
+                    <div class="column">
+                        <table class="innerTable">
+                            <tr>
+                                <th colspan="2">Patients by addmission type</th>
+                            </tr>
+                            <tr class="pBar" id="bar1">
+                                <td>Transfer from another healthcare facility</td>
+                                <td>100%</td>
+                            </tr>
+                            <tr class="pBar" id="bar2">
+                                <td>HMO Referal</td>
+                                <td>90%</td>
+                            </tr>
+                            <tr class="pBar" id="bar3">
+                                <td>Transfer from a hospital</td>
+                                <td>80%</td>
+                            </tr>
+                            <tr class="pBar" id="bar4">
+                                <td>Physcian Referal</td>
+                                <td>70%</td>
+                            </tr>
+                            <tr class="pBar" id="bar5">
+                                <td>Clinic Referal</td>
+                                <td>60%</td>
+                            </tr>
+                            <tr class="pBar" id="bar6">
+                                <td>Transfer from Skilled Nursing Facillity</td>
+                                <td>50%</td>
+                            </tr>
+                            <tr class="pBar" id="bar7">
+                                <td>Emergency Room</td>
+                                <td>40%</td>
+                            </tr>
+                            <tr class="pBar" id="bar8">
+                                <td>Other</td>
+                                <td>30%</td>
+                            </tr>
+                            <tr class="pBar" id="bar9">
+                                <td>Other</td>
+                                <td>20%</td>
+                            </tr>
+                            <tr class="pBar" id="bar10">
+                                <td>Other</td>
+                                <td>10%</td>
+                            </tr>
+                        </table>
+                        <a href="" class="linkButtons">See More</a>
+                    </div>
+                    <div class="column">
+                        <table class="innerTable">
+                            <tr>
+                                <th colspan="2">Monthly Discharges by diagnosis</th>
+                            </tr>
+                            <tr>
+                                <td>Lil Pneumonia</td>
+                                <td>99</td>
+                            </tr>
+                            <tr>
+                                <td>Cerebral Infarction</td>
+                                <td>83</td>
+                            </tr>
+                            <tr>
+                                <td>Mediastinal Carcinoma</td>
+                                <td>73</td>
+                            </tr>
+                            <tr>
+                                <td>Diverticullitis of small intersine with perforation and abscess</td>
+                                <td>62</td>
+                            </tr>
+                            <tr>
+                                <td>RII Pneumonia</td>
+                                <td>35</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td>28</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td>19</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td>5</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td>2</td>
+                            </tr>
+                            <tr>
+                                <td>Other</td>
+                                <td>1</td>
+                            </tr>
+                        </table>
+                        <a href="" class="linkButtons">See More</a>
+                    </div>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td></td>
+            <td colspan="3">
+                <table class="innerTable" id="lastTable">
+                    <tr>
+                        <th colspan="2">Monthly Patients by Division</th>
+                    </tr>
+                    <tr>
+                        <td>Surgery</td>
+                        <td>84</td>
+                    </tr>
+                    <tr>
+                        <td>Gybarcology</td>
+                        <td>74</td>
+                    </tr>
+                    <tr>
+                        <td>Dermatology</td>
+                        <td>63</td>
+                    </tr>
+                    <tr>
+                        <td>Neurology</td>
+                        <td>52</td>
+                    </tr>
+                    <tr>
+                        <td>Oncology</td>
+                        <td>41</td>
+                    </tr>
+                    <tr>
+                        <td>Orthopaedics</td>
+                        <td>32</td>
+                    </tr>
+                    <tr>
+                        <td>Cardiology</td>
+                        <td>27</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>16</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>6</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>1</td>
+                    </tr>
+                </table>
+                <a href="" class="linkButtons">See More</a>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

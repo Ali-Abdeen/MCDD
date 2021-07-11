@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/a1.css">
+</head>
+
+<body>
+    <table id="maintable">
+        <tr>
+            <td id="firstTD"><img src="/Assets/logo.png" alt="logo" class="logo"></td>
+            <td>
+                <div id="dashboards">Dashboards</div>
+                <div id="title">Order history</div>
+            </td>
+            <td colspan="2">
+                <form action="">
+                    <label for="range"></label>
+                    <input type="date" id="range" name="range" class="date" value="2021-07-05">
+                </form>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <form action="">
+                    <div class="buttonwrapper">
+                        <label for="search"></label>
+                        <input type="text" name="search" id="search" placeholder="Search..." class="searchBar">
+                        <button type="button"><img src="/Assets/search.png" alt="search" class="searchButton"></button>
+                    </div>
+                </form>
+            </td>
+            <td colspan="3">
+                <hr id="firstHR">
+            </td>
+        </tr>
+        <tr>
+            <td rowspan="2">
+                <ul class="nav">
+                    <li id="dashboardsNav">DASHBOARDS</li>
+                    <li id="selected">Overview</li>
+                    <li>Order history</li>
+                    <li>Fluid layout</li>
+                    <li>Icon nav</li>
+                </ul>
+                <ul class="nav">
+                    <li id="more">MORE</li>
+                    <li>Toolkit docs</li>
+                    <li>Bootstrap docs</li>
+                    <li>Light UI</li>
+                    <li>Example modal</li>
+                </ul>
+                <hr id="navHR">
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

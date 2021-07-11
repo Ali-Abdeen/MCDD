@@ -1,0 +1,421 @@
+body {
+  font-family: cats, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  padding: 50px 0px;
+}
+
+.logo {
+  width: 213px;
+  padding-right: 55px;
+}
+
+input {
+  border: 1px solid #d4d9df;
+  color: #7e8388;
+  width: 183px;
+  font-size: 14.4px;
+  padding: 6px 15px;
+}
+
+button {
+  position: absolute;
+  margin-left: -30px;
+  margin-top: 7px;
+  border: none;
+  background-color: transparent;
+}
+
+.searchButton {
+  width: 12px;
+  height: auto;
+}
+
+#maintable {
+  width: 1100px;
+  margin: auto;
+}
+
+.row, .column {
+  box-sizing: border-box;
+}
+
+.column {
+  float: left;
+  width: 50%;
+  padding: 5px;
+  padding: 0px 10px;
+}
+
+/* Clearfix*/
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.innerTable {
+  width: 100%;
+  margin: auto;
+  border: 1px solid rgba(0, 0, 0, 0.125);
+}
+
+.innerTable th, .innerTable td, .innerTable {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  border-collapse: collapse;
+}
+
+.innerTable th {
+  text-align: left;
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: normal;
+  height: 19px;
+}
+
+.innerTable td{
+  padding: 12px 20px;
+  text-align: right;
+  width: 50%;
+  height: 21px;
+  font-size: 14.4px;
+  font-weight: 300;
+  color: rgb(153, 153, 153);
+}
+
+.innerTable td:first-child{
+  text-align: left;
+  color: rgb(73, 80, 87);
+}
+
+/* The following code is to get a "progress" bar onto the table */
+.pBar td:first-child{
+  position: relative;
+}
+
+.pBar td:first-child::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 100%;
+  background-color: rgb(247, 247, 247);
+  z-index: -1;
+}
+
+#bar1 td:first-child::before {
+  width: 200%;
+}
+#bar2 td:first-child::before {
+  width: 180%;
+}
+#bar3 td:first-child::before {
+  width: 160%;
+}
+#bar4 td:first-child::before {
+  width: 140%;
+}
+#bar5 td:first-child::before {
+  width: 120%;
+}
+#bar6 td:first-child::before {
+  width: 100%;
+}
+#bar7 td:first-child::before {
+  width: 80%;
+}
+#bar8 td:first-child::before {
+  width: 60%;
+}
+#bar9 td:first-child::before {
+  width: 40%;
+}
+#bar10 td:first-child::before {
+  width: 20%;
+}
+/* End of progress/percentage bar */
+
+.linkButtons{
+  color:rgb(25, 151, 198);
+  border:1px solid rgb(25, 151, 198);
+  border-radius: 4px;
+  font-size: 14.4;
+  text-decoration: none;
+  padding: 6px 16px;
+  font-weight: normal;
+  text-align: center;
+  display: inline-block;
+  margin-top: 16px;
+}
+
+#lastTable{
+  margin-top: 48px;
+}
+
+.date {
+  float: right;
+}
+
+#selected, .date, .searchBar {
+  border-radius: 4px;
+}
+
+.pie {
+  width: 191px;
+  height: 191px;
+  margin: auto;
+}
+
+#pie1full {
+  width: 191px;
+  height: 191px;
+  border-radius: 100%;
+  background-color: #51beeb;
+  position: absolute;
+}
+
+#pie1cut {
+  width: 191px;
+  height: 191px;
+  border-radius: 100%;
+  background-color: #a3d066;
+  position: absolute;
+  clip-path: polygon(50% 0%, 50% 50%, 0% 100%, 0% 100%, 0% 0%);
+}
+
+#pie2full {
+  width: 191px;
+  height: 191px;
+  border-radius: 100%;
+  background-color: #51beeb;
+  position: absolute;
+}
+
+#pie2cut {
+  width: 191px;
+  height: 191px;
+  border-radius: 100%;
+  background-color: #a3d066;
+  position: absolute;
+  clip-path: polygon(50% 0%, 50% 50%, 20% 0%);
+}
+
+#pie3full {
+  width: 191px;
+  height: 191px;
+  border-radius: 100%;
+  background-color: #a3d066;
+  position: absolute;
+}
+
+#pie3cut {
+  width: 191px;
+  height: 191px;
+  border-radius: 100%;
+  background-color: #51beeb;
+  position: absolute;
+  clip-path: polygon(50% 0%, 50% 50%, 100% 60%, 100% 0%);
+}
+
+.innerCircle {
+  position: relative;
+  width: 152.6px;
+  height: 152.6px;
+  border-radius: 100%;
+  background-color: white;
+  top: 19.1px;
+  left: 19.1px;
+}
+
+.nav {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  font-size: 14.4px;
+}
+
+.nav li {
+  padding: 8px 16px;
+  color: rgb(25, 151, 198);
+  width: 183px;
+  height: 21px;
+  font-weight: 300;
+}
+
+#navHR {
+  margin-bottom: 230px;
+  margin-right: 40px;
+  width: 215px;
+}
+
+#selected {
+  color: white;
+  background-color: rgb(25, 151, 198);
+  width: 183px;
+}
+
+#selected:hover {
+  color: white;
+}
+
+.catagory {
+  text-align: center;
+  color: rgb(153, 153, 153);
+  font-size: 14.4px;
+  font-weight: normal;
+}
+
+.comparisons {
+  text-align: center;
+  font-size: 24px;
+  font-weight: 300;
+}
+
+#title {
+  font-size: 32px;
+  font-weight: 300;
+}
+
+#dashboards {
+  color: rgb(162, 169, 177);
+  font-size: 12.24px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+#dashboardsNav {
+  color: rgb(162, 169, 177);
+  font-size: 12.24px;
+  padding: 0px 15px;
+  margin-bottom: 5px;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
+
+#more {
+  color: rgb(162, 169, 177);
+  font-size: 12.24px;
+  font-weight: 400;
+  margin-top: 20px;
+  padding: 0px 15px;
+  margin-bottom: 5px;
+}
+
+/* First td, this forces the first column to be as small as possible */
+
+#firstTD {
+  width: 1px;
+}
+
+hr {
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.qsHR {
+  display: inline-block;
+  width: 43%;
+}
+
+#quickStats {
+  font-size: 12px;
+  text-align: center;
+}
+
+#qsDIV {
+  margin: 64px 0px 16px;
+}
+
+.square {
+  display: inline-block;
+  width: 186px;
+  height: 168px;
+  margin: 0px 5px;
+  border-radius: 10px;
+}
+
+#square1 {
+  background-color: #1bc98e;
+}
+
+#square2 {
+  background-color: #e64759;
+}
+
+#square3 {
+  background-color: #9f86ff;
+}
+
+#square4 {
+  background-color: #e4d836;
+}
+
+.squareTitle {
+  color: rgba(255, 255, 255, 0.65);
+  position: relative;
+  float: left;
+  left: 16px;
+  top: 16px;
+  margin-bottom: 16px;
+  font-size: 12.24px;
+  text-transform: uppercase;
+}
+
+.squareDigit {
+  clear: left;
+  font-size: 32px;
+  font-weight: normal;
+  color: white;
+  text-align: left;
+  position: relative;
+  left: 16px;
+}
+
+.squareSmall {
+  font-size: 12px;
+  padding: 4.8px;
+}
+
+.arrow-up {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 5px solid white;
+  position: relative;
+  top: -9px;
+  left: 1px;
+}
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid white;
+  position: relative;
+  bottom: -10px;
+  left: 1px;
+}
+
+.squareHR {
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  margin-top: 30px;
+}
+
+#qsEndHR {
+  margin: 48px 0px 30px;
+}
+
+#firstHR {
+  padding-top: 1px;
+  margin: 16px 0px 48px;
+}
+
+/* width: 1%;
+white-space: nowrap; */
+
+/* table, th, td{
+  border:1px solid red;
+} */
