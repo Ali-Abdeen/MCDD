@@ -18,7 +18,7 @@
                 <div id="dashboards">Dashboards</div>
                 <div id="title">Overview</div>
             </td>
-            <td colspan="2">                
+            <td colspan="2">
                 <form action="">
                     <label for="range"></label>
                     <input type="date" id="range" name="range" class="date" value="2021-07-05">
@@ -30,8 +30,9 @@
                 <form action="">
                     <div class="buttonwrapper">
                         <label for="search"></label>
-                        <input type="text" name="search" id="search" placeholder="Search..." class="searchBar">
-                        <button type="button"><img src="/Assets/search.png" alt="search" class="searchButton"></button>
+                        <input type="text" name="search" id="search" placeholder="Search...">
+                        <button type="button" id="button1"><img src="/Assets/search.png" alt="search"
+                                class="searchButtonImage"></button>
                     </div>
                 </form>
             </td>
@@ -40,20 +41,20 @@
             </td>
         </tr>
         <tr>
-            <td rowspan="2">
+            <td rowspan="2" id="navTD">
                 <ul class="nav">
                     <li id="dashboardsNav">DASHBOARDS</li>
                     <li id="selected">Overview</li>
-                    <li>Order history</li>
-                    <li>Fluid layout</li>
-                    <li>Icon nav</li>
+                    <li><a href="OrderHistory.html">Order history</a></li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
                 </ul>
                 <ul class="nav">
-                    <li id="more">MORE</li>
-                    <li>Toolkit docs</li>
-                    <li>Bootstrap docs</li>
-                    <li>Light UI</li>
-                    <li>Example modal</li>
+                    <li id="more">CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
                 </ul>
                 <hr id="navHR">
             </td>
@@ -183,7 +184,7 @@
             <td colspan="3">
                 <div class="row">
                     <div class="column">
-                        <table class="innerTable">
+                        <table class="innerTable" id="innerTable1">
                             <tr>
                                 <th colspan="2">Patients by addmission type</th>
                             </tr>
@@ -231,7 +232,7 @@
                         <a href="" class="linkButtons">See More</a>
                     </div>
                     <div class="column">
-                        <table class="innerTable">
+                        <table class="innerTable" id="innerTable2">
                             <tr>
                                 <th colspan="2">Monthly Discharges by diagnosis</th>
                             </tr>
@@ -334,5 +335,214 @@
         </tr>
     </table>
 </body>
+
+
+
+<script>
+    var arrayOfRN = [];
+    var remaining = 1000;
+
+    function apiRNG(callback) {
+        if (arrayOfRN.length != 10) {
+            //Create an XMLHttpRequest Object
+            var mynewnewXHR = new XMLHttpRequest();
+            //Send a Request. Must use the open() and send() methods
+            mynewnewXHR.open("GET", "http://www.randomnumberapi.com/api/v1.0/random?min=0&max=" + remaining);
+            mynewnewXHR.setRequestHeader('Accept', 'application/json');
+            mynewnewXHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+            mynewnewXHR.send();
+
+            //Define a Callback Function to be executed when the request receives an answer.
+            mynewnewXHR.onload = function () {
+                if (mynewnewXHR.status == 200) {
+                    var jsonObjectArray = JSON.parse(this.responseText);
+                    if (remaining > 0) {
+                        remaining = remaining - jsonObjectArray[0];
+                        arrayOfRN.push(jsonObjectArray[0] / 10);
+                    }
+                    else {
+                        arrayOfRN.push(0);
+                    }
+                    apiRNG(callback);
+                }
+                else {
+                    console.log("failied");
+                }
+            }
+        }
+        else {
+            callback();
+        }
+    }
+
+    function replaceTableWithNewData() {
+        arrayOfRN.sort(function (a, b) { return b - a });
+        var iTable = document.getElementById("innerTable1");
+
+        for (var i = 1, row; row = iTable.rows[i]; i++) {
+            row.cells[1].innerHTML = arrayOfRN[i - 1] + "%";
+        }
+
+        var root = document.documentElement;
+        root.style.setProperty('--bar1', (arrayOfRN[0] * 2) + "%");
+        root.style.setProperty('--bar2', (arrayOfRN[1] * 2) + "%");
+        root.style.setProperty('--bar3', (arrayOfRN[2] * 2) + "%");
+        root.style.setProperty('--bar4', (arrayOfRN[3] * 2) + "%");
+        root.style.setProperty('--bar5', (arrayOfRN[4] * 2) + "%");
+        root.style.setProperty('--bar6', (arrayOfRN[5] * 2) + "%");
+        root.style.setProperty('--bar7', (arrayOfRN[6] * 2) + "%");
+        root.style.setProperty('--bar8', (arrayOfRN[7] * 2) + "%");
+        root.style.setProperty('--bar9', (arrayOfRN[8] * 2) + "%");
+        root.style.setProperty('--bar10', (arrayOfRN[9] * 2) + "%");
+    }
+
+
+
+
+
+    function apiOrderMatters(callback, innerCallback) {
+        for (var i = 0; i < 10; i++) {
+            callback(i, innerCallback);
+        }
+    }
+
+    function apiRNG(counter, innerCallback) {
+        //Create an XMLHttpRequest Object
+        var mynewnewXHR = new XMLHttpRequest();
+        //Send a Request. Must use the open() and send() methods
+        mynewnewXHR.open("GET", "http://www.randomnumberapi.com/api/v1.0/random?min=0&max=" + remaining);
+        mynewnewXHR.setRequestHeader('Accept', 'application/json');
+        mynewnewXHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        mynewnewXHR.send();
+
+        //Define a Callback Function to be executed when the request receives an answer.
+        mynewnewXHR.onload = function () {
+            if (mynewnewXHR.status == 200) {
+                var jsonObjectArray = JSON.parse(this.responseText);
+                if (remaining > 0) {
+                    remaining = remaining - jsonObjectArray[0];
+                    arrayOfRN[counter] = (jsonObjectArray[0] / 10);
+                }
+                else {
+                    arrayOfRN[counter] = 0;
+                }
+                innerCallback();
+                console.log(counter);
+            }
+            else {
+                console.log("failied");
+            }
+        }
+    }
+
+
+    apiOrderMatters(apiRNG, replaceTableWithNewData);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    function apiRNG2(callback, chosenTable) {
+        //Create an XMLHttpRequest Object
+        var mynewnewXHR = new XMLHttpRequest();
+        //Send a Request. Must use the open() and send() methods
+        mynewnewXHR.open("GET", "http://www.randomnumberapi.com/api/v1.0/random?min=0&max=5000000&count=10");
+        mynewnewXHR.setRequestHeader('Accept', 'application/json');
+        mynewnewXHR.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        mynewnewXHR.send();
+
+        //Define a Callback Function to be executed when the request receives an answer.
+        mynewnewXHR.onload = function () {
+            if (mynewnewXHR.status == 200) {
+                var jsonObjectArray = JSON.parse(this.responseText);
+                console.log(jsonObjectArray);
+                callback(jsonObjectArray, chosenTable);
+            }
+            else {
+                console.log("failed");
+            }
+        }
+    }
+
+    function changeChosenTable(jsonObjectArray, chosenTable) {
+        var currentTable = document.getElementById(chosenTable);
+        for (var i = 1, row; row = currentTable.rows[i]; i++) {
+            row.cells[1].innerHTML = jsonObjectArray[i - 1];
+        }
+    }
+
+    apiRNG2(changeChosenTable, "innerTable2");
+    apiRNG2(changeChosenTable, "lastTable");
+    //apiRNG(replaceTableWithNewData);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 </html>

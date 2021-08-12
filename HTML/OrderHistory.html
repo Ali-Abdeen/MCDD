@@ -8,6 +8,7 @@
     <title>Document</title>
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,400italic" rel="stylesheet">
     <link rel="stylesheet" href="/CSS/a1.css">
+
 </head>
 
 <body>
@@ -21,44 +22,96 @@
             <td colspan="2">
                 <form action="">
                     <label for="range"></label>
-                    <input type="date" id="range" name="range" class="date" value="2021-07-05">
+                    <input type="date" id="range" name="range" class="date" value="2021-07-05" onchange="dateChange()">
                 </form>
             </td>
         </tr>
         <tr>
             <td>
                 <form action="">
-                    <div class="buttonwrapper">
+                    <div>
                         <label for="search"></label>
-                        <input type="text" name="search" id="search" placeholder="Search..." class="searchBar">
-                        <button type="button"><img src="/Assets/search.png" alt="search" class="searchButton"></button>
+                        <input type="text" name="search" id="search" placeholder="Search...">
+                        <button type="button" id="button1"><img src="/Assets/search.png" alt="search"
+                                class="searchButtonImage"></button>
                     </div>
                 </form>
             </td>
-            <td colspan="3">
-                <hr id="firstHR">
+            <td colspan="2">
+                <form action="">
+                    <div>
+                        <button type="button" id="button2"><img src="/Assets/search.png" alt="search"
+                                class="searchButtonImage"></button>
+                        <label for="search2"></label>
+                        <input type="text" name="search2" id="search2" placeholder="Search orders">
+                    </div>
+                </form>
+            </td>
+            <td>
+                <div class="utilitiesBox" id="utilitiesBox1" onmouseover="mOverColor(this)" onmouseout="mOutColor(this)"
+                    onclick="checkRowSelection()">
+
+                    <img src="/Assets/pencil.svg" id="colored-pen" alt="pen">
+                </div>
+                <div class="utilitiesBox" id="utilitiesBox2" onmouseover="mOverColor(this)" onmouseout="mOutColor(this)"
+                    onclick="deleteRow()">
+                    <img src="/Assets/backspace-arrow.svg" id="colored-backspace" alt="arrow">
+                </div>
             </td>
         </tr>
+
         <tr>
-            <td rowspan="2">
-                <ul class="nav">
+            <td rowspan="2" id="navTD">
+                <ul class="nav" id="nav2">
                     <li id="dashboardsNav">DASHBOARDS</li>
-                    <li id="selected">Overview</li>
-                    <li>Order history</li>
-                    <li>Fluid layout</li>
-                    <li>Icon nav</li>
+                    <li><a href="Index.html">Overview</a></li>
+                    <li id="selected">Order history</li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
                 </ul>
                 <ul class="nav">
-                    <li id="more">MORE</li>
-                    <li>Toolkit docs</li>
-                    <li>Bootstrap docs</li>
-                    <li>Light UI</li>
-                    <li>Example modal</li>
+                    <li id="more">CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
+                    <li>CHANGE THIS</li>
                 </ul>
                 <hr id="navHR">
             </td>
+            <td colspan="3" id="tableElementTD">
+                <div>
+                    <table id="tableElement"></table>
+                </div>
+            </td>
         </tr>
+        <!-- <tr>
+            <td colspan="3">
+
+            </td>
+        </tr> -->
     </table>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <br>
+            <!-- make default current? -->
+            <form action="">
+                <label for="newCName">New Customer Name:</label><br>
+                <input type="text" id="newCName" name="newCName"><br>
+                <label for="newCDesc">New Description:</label><br>
+                <input type="text" id="newCDesc" name="newCDesc"><br>
+                <label for="newCTotal">New Total:</label><br>
+                <input type="number" id="newCTotal" name="newCTotal"><br>
+                <button type="button" id="changeButton">Change</button>
+            </form>
+        </div>
+    </div>
+
 </body>
+<script src="/JS/OrderHistoryJS.js"></script>
 
 </html>

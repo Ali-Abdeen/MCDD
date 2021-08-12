@@ -1,3 +1,16 @@
+:root {
+  --bar1: 200%;
+  --bar2: 180%;
+  --bar3: 160%;
+  --bar4: 140%;
+  --bar5: 120%;
+  --bar6: 100%;
+  --bar7: 80%;
+  --bar8: 60%;
+  --bar9: 40%;
+  --bar10: 20%;
+}
+
 body {
   font-family: cats, Roboto, "Helvetica Neue", Helvetica, Arial, sans-serif;
   padding: 50px 0px;
@@ -16,7 +29,7 @@ input {
   padding: 6px 15px;
 }
 
-button {
+#button1 {
   position: absolute;
   margin-left: -30px;
   margin-top: 7px;
@@ -24,9 +37,27 @@ button {
   background-color: transparent;
 }
 
-.searchButton {
+#button2 {
+  position: absolute;
+  margin-top: 7px;
+  border: none;
+  background-color: transparent;
+  border-radius: 4px;
+  margin-left: 5px;
+}
+
+#search2 {
+  padding-left: 30px;
+  margin-bottom: 11px;
+}
+
+.searchButtonImage {
   width: 12px;
   height: auto;
+}
+
+#search, #search2 {
+  border-radius: 4px;
 }
 
 #maintable {
@@ -72,7 +103,7 @@ button {
   height: 19px;
 }
 
-.innerTable td{
+.innerTable td {
   padding: 12px 20px;
   text-align: right;
   width: 50%;
@@ -82,13 +113,14 @@ button {
   color: rgb(153, 153, 153);
 }
 
-.innerTable td:first-child{
+.innerTable td:first-child {
   text-align: left;
   color: rgb(73, 80, 87);
 }
 
 /* The following code is to get a "progress" bar onto the table */
-.pBar td:first-child{
+
+.pBar td:first-child {
   position: relative;
 }
 
@@ -104,40 +136,50 @@ button {
 }
 
 #bar1 td:first-child::before {
-  width: 200%;
+  width: var(--bar1);
 }
+
 #bar2 td:first-child::before {
-  width: 180%;
+  width: var(--bar2);
 }
+
 #bar3 td:first-child::before {
-  width: 160%;
+  width: var(--bar3);
 }
+
 #bar4 td:first-child::before {
-  width: 140%;
+  width: var(--bar4);
 }
+
 #bar5 td:first-child::before {
-  width: 120%;
+  width: var(--bar5);
 }
+
 #bar6 td:first-child::before {
-  width: 100%;
+  width: var(--bar6);
 }
+
 #bar7 td:first-child::before {
-  width: 80%;
+  width: var(--bar7);
 }
+
 #bar8 td:first-child::before {
-  width: 60%;
+  width: var(--bar8);
 }
+
 #bar9 td:first-child::before {
-  width: 40%;
+  width: var(--bar9);
 }
+
 #bar10 td:first-child::before {
-  width: 20%;
+  width: var(--bar10);
 }
+
 /* End of progress/percentage bar */
 
-.linkButtons{
-  color:rgb(25, 151, 198);
-  border:1px solid rgb(25, 151, 198);
+.linkButtons {
+  color: rgb(25, 151, 198);
+  border: 1px solid rgb(25, 151, 198);
   border-radius: 4px;
   font-size: 14.4;
   text-decoration: none;
@@ -148,15 +190,12 @@ button {
   margin-top: 16px;
 }
 
-#lastTable{
+#lastTable {
   margin-top: 48px;
 }
 
 .date {
   float: right;
-}
-
-#selected, .date, .searchBar {
   border-radius: 4px;
 }
 
@@ -242,8 +281,13 @@ button {
   font-weight: 300;
 }
 
+.nav li a {
+  color: rgb(25, 151, 198);
+  text-decoration: none;
+}
+
 #navHR {
-  margin-bottom: 230px;
+  /* margin-bottom: 230px; */
   margin-right: 40px;
   width: 215px;
 }
@@ -252,6 +296,7 @@ button {
   color: white;
   background-color: rgb(25, 151, 198);
   width: 183px;
+  border-radius: 4px;
 }
 
 #selected:hover {
@@ -413,9 +458,128 @@ hr {
   margin: 16px 0px 48px;
 }
 
-/* width: 1%;
-white-space: nowrap; */
+/* ------- */
 
-/* table, th, td{
-  border:1px solid red;
-} */
+#colored-backspace, #colored-pen {
+  filter: invert(58%) sepia(90%) saturate(4969%) hue-rotate(169deg) brightness(99%) contrast(80%);
+  width: 16px;
+  height: auto;
+  padding: 6px 12px;
+  margin-top: 2px;
+}
+
+.utilitiesBox {
+  display: inline-block;
+  position: relative;
+  left: 311px;
+  width: 38px;
+  height: 33px;
+  border: 1px solid #1997c5;
+  border-radius: 4px 0px 0px 4px;
+  margin-bottom: 11px;
+}
+
+#utilitiesBox2 {
+  border-radius: 0px 4px 4px 0px;
+  margin-left: -5px;
+}
+
+#tableElement {
+  font-size: 14.4px;
+  font-weight: 300;
+  text-align: left;
+  border-collapse: collapse;
+}
+
+#tableElement td {
+  border-bottom: 1px solid rgb(222, 226, 230);
+  padding: 12px;
+}
+
+#tableElement th {
+  border-bottom: 2px solid rgb(222, 226, 230);
+  border-top: 1px solid rgb(222, 226, 230);
+  padding: 12px;
+  margin-top: 1px;
+}
+
+#tableElement input {
+  width: min-content;
+  height: min-content;
+}
+
+#navTD, #tableElementTD {
+  vertical-align: text-top;
+}
+
+/* --------------------------------- */
+
+/* The Modal (background) */
+
+.modal {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0);
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+}
+
+/* Modal Content */
+
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 20%;
+  text-align: center;
+  box-shadow: 5px 10px 8px 10px rgb(25, 151, 198);
+  font-weight: bold;
+}
+
+.modal-content input {
+  margin: 10px;
+}
+
+.modal-content button {
+  background-color: rgb(25, 151, 198);
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+/* The Close Button */
+
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover, .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
